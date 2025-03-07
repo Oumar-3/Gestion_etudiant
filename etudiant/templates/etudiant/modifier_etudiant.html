@@ -1,7 +1,38 @@
-<h1>Modifier un Étudiant</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Modifier</button>
-</form>
-<a href="{% url 'etudiants'%}">Retour</a>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJOUT</title>
+    <link rel="stylesheet" href="{% static 'css/ajout.css' %}">
+   
+  </head>
+  <body>
+
+    <form method="POST">
+        <div class="cont">
+            
+          <div class="form sign-in">
+            <h2>Modifier un Étudiant</h2>
+            
+            <label>
+              <span>{% csrf_token %}</span>
+             
+            </label>
+            <label>
+              <span>{{ form.as_p }}</span>
+            </label>
+            <button type="submit" class="submit">Modifier</button>
+            <a type="submit" href="{% url 'etudiants'%}">Retour</button>
+            
+          </div>
+          <div class="sub-cont">
+            <div class="img"></div>
+        </div>
+       
+    </form>    
+  </body>
+</html>
+

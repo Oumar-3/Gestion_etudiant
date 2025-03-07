@@ -1,7 +1,37 @@
-<h1>Supprimer un Étudiant</h1>
-<p>Es-tu sûr de vouloir supprimer {{ etudiant.prenom }} {{ etudiant.nom }} ?</p>
-<form method="POST">
-    {% csrf_token %}
-    <button type="submit">Oui, supprimer</button>
-</form>
-<a href="{% url 'etudiants'%}">Annuler</a>
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJOUT</title>
+    <link rel="stylesheet" href="{% static 'css/ajout.css' %}">
+   
+  </head>
+  <body>
+
+    <form method="POST">
+        <div class="cont">
+            
+          <div class="form sign-in">
+            <h2>Supprimer un Étudiant</h2>
+            
+            <label>
+            <p class="forgot-pass">Es-tu sûr de vouloir supprimer: <br>{{ etudiant.prenom }} {{ etudiant.nom }} ?</p>
+              <span>{% csrf_token %}</span>
+             
+            </label>
+            <button type="submit" class="submit">Oui, supprimer</button>
+            <a type="submit" href="{% url 'etudiants'%}">Annuler</button>
+            
+          </div>
+          <div class="sub-cont">
+            <div class="img"></div>
+        </div>
+       
+    </form>    
+  </body>
+</html>
+

@@ -5,28 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJOUT</title>
-    <link rel="stylesheet" href="{% static 'css/connexion.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ajout.css' %}">
+   
   </head>
   <body>
 
-    <div class="sign">
-
-      <div class="sign-content">
-        <h1>Ajouter un Étudiant</h1>
-        
-        <form method="POST">
-
-          <div class="field">
-            <label> {% csrf_token %}
-                {{ form.as_p }}</label>
-            <input>
+    <form method="POST">
+        <div class="cont">
+            
+          <div class="form sign-in">
+            <h2>Ajouter un Étudiant</h2>
+            
+            <label>
+              <span>{% csrf_token %}</span>
+             
+            </label>
+            <label>
+              <span>{{ form.as_p }}</span>
+            </label>
+            <button type="submit" class="submit">Ajouter</button>
+            <a type="submit" class="btn btn-warning btn-sm"href="{% url 'etudiants'%}">Retour</button>
+            
           </div>
-          <button   type="submit" id="sign-button"><a href="">Ajouter</a></button>
-        </form>
-        <a href="{% url 'etudiants'%}" class="forget-pwd">Retour</a>
-      </div>
-
-    </div>
-    
+          <div class="sub-cont">
+            <div class="img"></div>
+        </div>
+       
+    </form>    
   </body>
 </html>
+
